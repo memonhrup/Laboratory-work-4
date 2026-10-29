@@ -17,5 +17,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_JAVA: true
-          FILTER_REGEX_INCLUDE: .*ProgramCode\.java
+          FILTER_REGEX_INCLUDE: .*ProgramCodeModified\.java
           DEFAULT_BRANCH: main
+          
