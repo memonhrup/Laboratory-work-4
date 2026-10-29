@@ -1,0 +1,21 @@
+name: Program Code Convention
+
+on:
+  push:
+
+jobs:
+  JavaLinter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code in Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Start Super Linter
+        uses: super-linter/super-linter/slim@v7
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_JAVA: true
+          FILTER_REGEX_INCLUDE: .*ProgramCode\.java
+          DEFAULT_BRANCH: main
